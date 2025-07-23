@@ -42,6 +42,8 @@ mod generator;
 mod postgres;
 #[cfg(feature = "rkyv")]
 mod rkyv;
+#[cfg(feature = "sqlx-postgres")]
+mod sqlx_postgres;
 #[cfg(feature = "serde")]
 pub mod serde;
 #[cfg(feature = "std")]
