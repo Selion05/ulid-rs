@@ -11,7 +11,7 @@ impl Type<Postgres> for Ulid {
 }
 
 impl Encode<'_, Postgres> for Ulid {
-    fn encode_by_ref(&self, buf: &mut PgArgumentBuffer) -> IsNull {
+    fn encode_by_ref(&self, buf: &mut PgArgumentBuffer) -> Result<IsNull, BoxDynError> {
         let uuid = sqlx::types::Uuid::from_u128(self.0);
         uuid.encode_by_ref(buf)
     }
@@ -26,7 +26,6 @@ impl Decode<'_, Postgres> for Ulid {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::Ulid;
 
     #[test]
