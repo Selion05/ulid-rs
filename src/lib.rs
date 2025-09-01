@@ -44,6 +44,8 @@ mod postgres;
 mod rkyv;
 #[cfg(feature = "sqlx-postgres")]
 mod sqlx_postgres;
+#[cfg(feature = "sqlx-sqlite")]
+mod sqlx_sqlite;
 #[cfg(feature = "serde")]
 pub mod serde;
 #[cfg(feature = "std")]

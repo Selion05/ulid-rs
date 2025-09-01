@@ -17,6 +17,7 @@ default = ["std"]
 std = ["rand"]
 postgres = ["dep:postgres-types", "dep:bytes"]
 sqlx-postgres = ["dep:sqlx", "sqlx/postgres"]
+sqlx-sqlite = ["dep:sqlx", "sqlx/sqlite"]
 rkyv = ["dep:rkyv"]
 
 [dependencies]
