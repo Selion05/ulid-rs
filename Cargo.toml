@@ -15,8 +15,9 @@ repository = "https://github.com/dylanhart/ulid-rs"
 [features]
 default = ["std"]
 std = ["rand"]
+uuid = ["dep:uuid"]
 postgres = ["dep:postgres-types", "dep:bytes"]
-sqlx-postgres = ["dep:sqlx", "sqlx/postgres", "dep:uuid"]
+sqlx-postgres = ["dep:sqlx", "sqlx/postgres", "uuid"]
 sqlx-sqlite = ["dep:sqlx", "sqlx/sqlite"]
 rkyv = ["dep:rkyv"]
 
