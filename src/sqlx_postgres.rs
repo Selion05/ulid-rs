@@ -13,7 +13,7 @@ impl Type<Postgres> for Ulid {
 impl Encode<'_, Postgres> for Ulid {
     fn encode_by_ref(&self, buf: &mut PgArgumentBuffer) -> Result<IsNull, BoxDynError> {
         let uuid = sqlx::types::Uuid::from_u128(self.0);
-        uuid.encode_by_ref(buf)
+        <sqlx::types::Uuid as Encode<'_, Postgres>>::encode_by_ref(&uuid, buf)
     }
 }
 
